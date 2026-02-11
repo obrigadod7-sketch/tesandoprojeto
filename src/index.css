@@ -1,0 +1,194 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Design system (HSL only). */
+
+@layer base {
+:root {
+    /* Core */
+    --background: 210 40% 98%;
+    --foreground: 222 38% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 38% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 38% 12%;
+
+    /* Brand: Lusitana (azul + dourado) */
+    --primary: 214 92% 46%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 45 92% 52%;
+    --secondary-foreground: 222 38% 12%;
+
+    --muted: 214 24% 94%;
+    --muted-foreground: 218 16% 40%;
+
+    --accent: 204 86% 92%;
+    --accent-foreground: 222 38% 12%;
+
+    --destructive: 0 84% 56%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214 24% 88%;
+    --input: 214 24% 88%;
+    --ring: 214 92% 46%;
+
+    --radius: 1rem;
+
+    /* Typography */
+    --font-sans: "Source Sans 3", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji",
+      "Segoe UI Emoji";
+    --font-display: "Spectral", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+
+    /* Signature gradients & effects */
+    --gradient-hero: radial-gradient(1200px 700px at 20% 10%, hsl(var(--primary) / 0.20), transparent 55%),
+      radial-gradient(1000px 600px at 80% 0%, hsl(var(--secondary) / 0.22), transparent 55%),
+      linear-gradient(180deg, hsl(var(--background)), hsl(var(--background)));
+
+    --gradient-card: radial-gradient(600px 280px at 10% 0%, hsl(var(--primary) / 0.12), transparent 60%),
+      linear-gradient(180deg, hsl(var(--card)), hsl(var(--card)));
+
+    --shadow-elev: 0 18px 40px -22px hsl(var(--primary) / 0.45);
+
+    /* Used by the hero pointer glow */
+    --hero-spot: radial-gradient(
+      680px circle at var(--mx, 50%) var(--my, 30%),
+      hsl(var(--primary) / 0.22),
+      transparent 55%
+    );
+
+    /* Elementor-clone palette (HSL only) */
+    --mel-blue-900: 206 79% 21%;
+    --mel-blue-800: 205 77% 25%;
+    --mel-blue-700: 204 78% 43%;
+    --mel-blue-600: 205 74% 38%;
+    --mel-blue-a: 212 76% 49%;
+    --mel-blue-b: 208 97% 53%;
+    --mel-divider: 206 100% 58%;
+
+    /* overlays */
+    --mel-overlay: 0 3% 6%;
+
+    /* “azul médio” → azul acinzentado, suave/desbotado (para suavizar fotos) */
+    --mel-haze: 210 22% 42%;
+
+    /* Sidebar tokens kept for shadcn sidebar */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222 44% 7%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 44% 9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 44% 9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 214 92% 60%;
+    --primary-foreground: 222 44% 8%;
+
+    --secondary: 45 92% 58%;
+    --secondary-foreground: 222 44% 8%;
+
+    --muted: 222 26% 16%;
+    --muted-foreground: 215 18% 70%;
+
+    --accent: 222 26% 16%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 222 26% 18%;
+    --input: 222 26% 18%;
+    --ring: 214 92% 60%;
+
+    --gradient-hero: radial-gradient(1200px 700px at 20% 10%, hsl(var(--primary) / 0.24), transparent 55%),
+      radial-gradient(1000px 600px at 80% 0%, hsl(var(--secondary) / 0.16), transparent 55%),
+      linear-gradient(180deg, hsl(var(--background)), hsl(var(--background)));
+
+    --gradient-card: radial-gradient(600px 280px at 10% 0%, hsl(var(--primary) / 0.16), transparent 60%),
+      linear-gradient(180deg, hsl(var(--card)), hsl(var(--card)));
+
+    --shadow-elev: 0 18px 40px -22px hsl(var(--primary) / 0.55);
+
+    --hero-spot: radial-gradient(
+      680px circle at var(--mx, 50%) var(--my, 30%),
+      hsl(var(--primary) / 0.22),
+      transparent 55%
+    );
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    font-family: var(--font-sans);
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer utilities {
+  .bg-hero {
+    background-image: var(--gradient-hero);
+  }
+
+  .bg-card-glow {
+    background-image: var(--gradient-card);
+  }
+
+  .shadow-elev {
+    box-shadow: var(--shadow-elev);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      animation: reveal-in 700ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+    }
+
+    @keyframes reveal-in {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+}
