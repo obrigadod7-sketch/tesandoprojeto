@@ -75,6 +75,19 @@
     /* “azul médio” → azul acinzentado, suave/desbotado (para suavizar fotos) */
     --mel-haze: 210 22% 42%;
 
+    /* Paleta para overlays nas FOTOS (Cultos/Células) */
+    --mel-photo-base: 196 31% 34%; /* #3B6371 */
+    --mel-photo-deep: 207 77% 21%; /* #0C3A5D */
+    --mel-photo-mid: 205 58% 27%; /* #1D4C6C */
+    --mel-photo-mid2: 203 56% 32%; /* #235B7F */
+    --mel-photo-haze: 204 25% 61%; /* #85A1B4 */
+    --mel-ice: 197 22% 94%; /* #ECF1F3 */
+
+    /* Banner tonalities (usadas nos cards com foto) */
+    --mel-banner-1: var(--mel-photo-base);
+    --mel-banner-2: var(--mel-photo-mid);
+    --mel-banner-3: var(--mel-photo-deep);
+
     /* Sidebar tokens kept for shadcn sidebar */
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -175,6 +188,25 @@
     box-shadow: var(--shadow-elev);
   }
 
+  /* Remove floating translation widgets (ex.: Google Translate / GTranslate).
+     These are often injected externally and show a "Portuguese/Português" pill on the bottom-right. */
+  .gtranslate_wrapper,
+  .gt_float_switcher,
+  .gtranslate,
+  #google_translate_element,
+  .goog-te-gadget,
+  .goog-te-balloon-frame,
+  #goog-gt-tt,
+  iframe.goog-te-banner-frame {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  /* Google Translate banner can push the page down. */
+  body {
+    top: 0 !important;
+  }
+
   @media (prefers-reduced-motion: no-preference) {
     .reveal {
       animation: reveal-in 700ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
@@ -192,3 +224,4 @@
     }
   }
 }
+

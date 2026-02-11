@@ -61,6 +61,10 @@ export default {
           divider: "hsl(var(--mel-divider))",
           overlay: "hsl(var(--mel-overlay))",
           haze: "hsl(var(--mel-haze))",
+          banner1: "hsl(var(--mel-banner-1))",
+          banner2: "hsl(var(--mel-banner-2))",
+          banner3: "hsl(var(--mel-banner-3))",
+          ice: "hsl(var(--mel-ice))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
